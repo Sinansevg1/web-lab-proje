@@ -1,42 +1,231 @@
-#root {
-  max-width: 1280px;
+/* ── Header ── */
+header {
+  background-color: #1a1a2e;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #2563EB;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: #a5b4fc;
+}
+
+/* ── Nav ── */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #818cf8;
+}
+
+/* ── Main ── */
+main {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
+}
+
+/* ── Sections ── */
+section {
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+section h2 {
+  font-size: 1.7rem;
+  color: #818cf8;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+/* ── Hakkimda ── */
+#hakkimda figure {
+  display: inline-block;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#hakkimda figure img {
+  border-radius: 50%;
+  border: 3px solid #2563EB;
+  display: block;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#hakkimda figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#hakkimda p {
+  margin-bottom: 1rem;
+  max-width: 650px;
 }
 
-.card {
-  padding: 2em;
+#hakkimda h3 {
+  font-size: 1.1rem;
+  color: #c4b5fd;
+  margin-bottom: 0.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+#hakkimda ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+}
+
+/* ── Projeler ── */
+#projeler {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#projeler h2 {
+  margin-bottom: 1.2rem;
+}
+
+#projeler article {
+  background: #1e1e2e;
+  border: 1px solid #2d2d44;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+#projeler article:hover {
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+}
+
+#projeler article h3 {
+  color: #a5b4fc;
+  margin-bottom: 0.6rem;
+}
+
+#projeler article figure {
+  margin-bottom: 0.8rem;
+}
+
+#projeler article figure img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+#projeler article figure figcaption {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 0.3rem;
+}
+
+#projeler article p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #c9cad6;
+}
+
+#projeler article ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+#projeler article ul li {
+  background: #2563EB22;
+  color: #818cf8;
+  border: 1px solid #2563EB55;
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+/* ── Iletisim Form ── */
+#iletisim fieldset {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 600px;
+}
+
+#iletisim legend {
+  color: #a5b4fc;
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+#iletisim input,
+#iletisim textarea,
+#iletisim select {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+#iletisim button[type="submit"] {
+  background: #2563EB;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+#iletisim button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+/* ── Footer ── */
+footer {
+  background: #1a1a2e;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-top: 2px solid #2563EB;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+footer ul li a {
+  color: #818cf8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer ul li a:hover {
+  color: #a5b4fc;
 }
