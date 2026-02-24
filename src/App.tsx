@@ -7,7 +7,7 @@ function App() {
       <a href="#main-content" className="skip-link">Ana icerige atla</a>
 
       <header>
-        <h1>Sinan Sevgi | Kişisel Portföy</h1>
+        <h1>Sinan Sevgi</h1>
         <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
@@ -18,8 +18,11 @@ function App() {
       </header>
 
       <main id="main-content">
+
+        {/* ── Hakkimda ── */}
         <section id="hakkimda">
           <h2>Hakkimda</h2>
+
           <figure>
             <img
               src="https://placehold.co/150x150"
@@ -27,34 +30,68 @@ function App() {
             />
             <figcaption>Sinan Sevgi</figcaption>
           </figure>
+
+          <p>
+            Merhaba! Ben Sinan Sevgi, web tasarimi ve yazilim gelistirme alaninda
+            kendini gelistiren bir ogrenciyim. Kullanici dostu, erişilebilir ve
+            performansli arayuzler olusturmaya odaklaniyorum.
+          </p>
+
+          <h3>Kullandiğim Teknolojiler</h3>
+          <ul>
+            <li>HTML5 &amp; CSS3</li>
+            <li>JavaScript / TypeScript</li>
+            <li>React</li>
+            <li>Git &amp; GitHub</li>
+          </ul>
         </section>
 
+        {/* ── Projelerim ── */}
         <section id="projeler">
           <h2>Projelerim</h2>
 
           <article>
-            <h3>Proje 1</h3>
+            <h3>Kisisel Portfolyo Sitesi</h3>
             <figure>
               <img
                 src="https://placehold.co/400x225"
-                alt="Proje 1 uygulama ekran goruntüsü"
+                alt="Kisisel portfolyo sitesinin ana sayfa ekran gorüntüsü"
               />
-              <figcaption>Proje 1 - Ekran Görüntüsü</figcaption>
+              <figcaption>Portfolyo – Ana Sayfa</figcaption>
             </figure>
+            <p>
+              Semantik HTML5, erişilebilirlik ilkeleri ve temel CSS kullanilarak
+              gelistirilen tek sayfali kisisel tanitim sitesi.
+            </p>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>React</li>
+            </ul>
           </article>
 
           <article>
-            <h3>Proje 2</h3>
+            <h3>Görev Takip Uygulamasi</h3>
             <figure>
               <img
                 src="https://placehold.co/400x225"
-                alt="Proje 2 uygulama ekran goruntüsü"
+                alt="Görev takip uygulamasinin görev listesi ekran gorüntüsü"
               />
-              <figcaption>Proje 2 - Ekran Görüntüsü</figcaption>
+              <figcaption>Görev Takip – Liste Görünümü</figcaption>
             </figure>
+            <p>
+              Kullanicilarin görev ekleyip, tamamlanmis olarak isaretleyebildiği
+              basit bir yapilacaklar listesi uygulamasi.
+            </p>
+            <ul>
+              <li>JavaScript</li>
+              <li>LocalStorage</li>
+              <li>CSS3</li>
+            </ul>
           </article>
         </section>
 
+        {/* ── Iletisim ── */}
         <section id="iletisim">
           <h2>Iletisim</h2>
 
@@ -120,10 +157,15 @@ function App() {
             </fieldset>
           </form>
         </section>
+
       </main>
 
       <footer>
         <p>&copy; 2025 Sinan Sevgi. Tum haklari saklidir.</p>
+        <ul>
+          <li><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
       </footer>
     </>
   )
