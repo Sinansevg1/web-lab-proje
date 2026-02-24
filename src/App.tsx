@@ -3,9 +3,12 @@ import './App.css'
 function App() {
   return (
     <>
+      {/* Skip Navigation */}
+      <a href="#main-content" className="skip-link">Ana icerige atla</a>
+
       <header>
         <h1>Sinan Sevgi | Kişisel Portföy</h1>
-        <nav>
+        <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
             <li><a href="#projeler">Projeler</a></li>
@@ -14,7 +17,7 @@ function App() {
         </nav>
       </header>
 
-      <main>
+      <main id="main-content">
         <section id="hakkimda">
           <h2>Hakkimda</h2>
           <figure>
