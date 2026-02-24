@@ -1,28 +1,26 @@
-# Web LAB-1 - Hello Project
+# Web Lab
 
 ## Hakkında
-Bu proje, Web Tasarımı ve Programlama dersi LAB-1 kapsamında Vite + React + TypeScript kullanılarak oluşturulmuştur.
+Web Tasarımı ve Programlama dersi kapsamında Vite + React + TypeScript kullanılarak oluşturulmuştur. Semantik HTML5, erişilebilirlik (a11y) ilkeleri ve doğrulamalı iletişim formu içermektedir.
 
 ## Geliştirici
 - **Ad Soyad:** Sinan Sevgi
 - **Öğrenci No:** 225541066
 
-## Kullanılan Teknolojiler
-- React 18
-- TypeScript
-- Vite
-
-## Kurulum
+## Kurulum & Çalıştırma
 ```bash
 npm install
-```
-
-## Çalıştırma
-```bash
 npm run dev
 ```
 
-Tarayıcıda http://localhost:5173 adresini aç.
+## Özellikler
+- ✅ Semantik HTML5 (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- ✅ Heading hiyerarşisi (`h1` → `h2` → `h3`)
+- ✅ Skip navigation + ARIA öznitelikleri
+- ✅ Doğrulamalı iletişim formu
+- ✅ Focus göstergesi & klavye gezinme
+- ✅ `<html lang="tr">`
 
-## Ekran Görüntüsü
-(ekran görüntüsünü buraya ekle)
+
+## Lighthouse Erişilebilirlik Skoru
+<img width="1920" height="1080" alt="Ekran Görüntüsü (28)" src="https://github.com/user-attachments/assets/ba2b62e0-e414-4882-b94f-057c077eb580" />
