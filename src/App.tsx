@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <header>
+        <h1>Sinan Sevgi | Kişisel Portföy</h1>
         <nav>
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
@@ -16,12 +17,39 @@ function App() {
       <main>
         <section id="hakkimda">
           <h2>Hakkimda</h2>
-          {/* icerik buraya */}
+          <figure>
+            <img
+              src="https://placehold.co/150x150"
+              alt="Sinan Sevgi'nin vesikalik fotografi"
+            />
+            <figcaption>Sinan Sevgi</figcaption>
+          </figure>
         </section>
 
         <section id="projeler">
           <h2>Projelerim</h2>
-          {/* icerik buraya */}
+
+          <article>
+            <h3>Proje 1</h3>
+            <figure>
+              <img
+                src="https://placehold.co/400x225"
+                alt="Proje 1 uygulama ekran goruntüsü"
+              />
+              <figcaption>Proje 1 - Ekran Görüntüsü</figcaption>
+            </figure>
+          </article>
+
+          <article>
+            <h3>Proje 2</h3>
+            <figure>
+              <img
+                src="https://placehold.co/400x225"
+                alt="Proje 2 uygulama ekran goruntüsü"
+              />
+              <figcaption>Proje 2 - Ekran Görüntüsü</figcaption>
+            </figure>
+          </article>
         </section>
 
         <section id="iletisim">
