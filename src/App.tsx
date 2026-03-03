@@ -7,7 +7,7 @@ function App() {
       <a href="#main-content" className="skip-link">Ana icerige atla</a>
 
       <header>
-        <h1>Sinan Sevgi</h1>
+        <h1 className="site-title">Sinan Sevgi</h1>
         <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
@@ -38,11 +38,14 @@ function App() {
           </p>
 
           <h3>Kullandiğim Teknolojiler</h3>
-          <ul>
-            <li>HTML5 &amp; CSS3</li>
-            <li>JavaScript / TypeScript</li>
+          <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
             <li>React</li>
-            <li>Git &amp; GitHub</li>
+            <li>Git</li>
+            <li>GitHub</li>
           </ul>
         </section>
 
@@ -63,7 +66,7 @@ function App() {
               Semantik HTML5, erişilebilirlik ilkeleri ve temel CSS kullanilarak
               gelistirilen tek sayfali kisisel tanitim sitesi.
             </p>
-            <ul>
+            <ul className="skill-tags">
               <li>HTML5</li>
               <li>CSS3</li>
               <li>React</li>
@@ -83,7 +86,7 @@ function App() {
               Kullanicilarin görev ekleyip, tamamlanmis olarak isaretleyebildiği
               basit bir yapilacaklar listesi uygulamasi.
             </p>
-            <ul>
+            <ul className="skill-tags">
               <li>JavaScript</li>
               <li>LocalStorage</li>
               <li>CSS3</li>

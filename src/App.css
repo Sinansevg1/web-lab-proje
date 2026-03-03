@@ -1,16 +1,15 @@
 /* ── Header ── */
 header {
-  background-color: var(--color-surface);
-  padding: var(--space-lg) var(--space-xl);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--color-border);
 }
 
 header h1 {
@@ -20,20 +19,27 @@ header h1 {
 
 /* ── Nav ── */
 nav ul {
-  list-style: none;
   display: flex;
-  gap: var(--space-lg);
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li a {
+nav a {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
   color: var(--color-text);
   text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-fast);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-nav ul li a:hover {
-  color: var(--color-primary);
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
 }
 
 /* ── Main ── */
@@ -87,12 +93,20 @@ section h2 {
   margin-bottom: var(--space-sm);
 }
 
-#hakkimda ul {
-  list-style: disc;
-  padding-left: var(--space-xl);
+.skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-xl);
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+}
+
+.skill-tags li {
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
 }
 
 /* ── Projeler ── */
@@ -229,4 +243,24 @@ footer ul li a {
 
 footer ul li a:hover {
   color: var(--color-primary);
+}
+
+/* ===== MOBİLDE DİKEY YIĞIN ===== */
+@media (max-width: 639px) {
+  header {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
 }
