@@ -23,30 +23,34 @@ function App() {
         <section id="hakkimda">
           <h2>Hakkimda</h2>
 
-          <figure>
-            <img
-              src="https://placehold.co/150x150"
-              alt="Sinan Sevgi'nin vesikalik fotografi"
-            />
-            <figcaption>Sinan Sevgi</figcaption>
-          </figure>
+          <div className="about-content">
+            <figure>
+              <img
+                src="https://placehold.co/150x150"
+                alt="Sinan Sevgi'nin vesikalik fotografi"
+              />
+              <figcaption>Sinan Sevgi</figcaption>
+            </figure>
 
-          <p>
-            Merhaba! Ben Sinan Sevgi, web tasarimi ve yazilim gelistirme alaninda
-            kendini gelistiren bir ogrenciyim. Kullanici dostu, erişilebilir ve
-            performansli arayuzler olusturmaya odaklaniyorum.
-          </p>
+            <div>
+              <p>
+                Merhaba! Ben Sinan Sevgi, web tasarimi ve yazilim gelistirme alaninda
+                kendini gelistiren bir ogrenciyim. Kullanici dostu, erişilebilir ve
+                performansli arayuzler olusturmaya odaklaniyorum.
+              </p>
 
-          <h3>Kullandiğim Teknolojiler</h3>
-          <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Git</li>
-            <li>GitHub</li>
-          </ul>
+              <h3>Kullandiğim Teknolojiler</h3>
+              <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Git</li>
+                <li>GitHub</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* ── Projelerim ── */}
