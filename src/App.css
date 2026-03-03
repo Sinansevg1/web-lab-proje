@@ -14,7 +14,7 @@ header {
 }
 
 header h1 {
-  font-size: var(--text-xl);
+  font-size: var(--text-3xl);
   color: var(--color-primary);
 }
 
@@ -82,7 +82,7 @@ section h2 {
 }
 
 #hakkimda h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   color: var(--color-secondary);
   margin-bottom: var(--space-sm);
 }
@@ -122,6 +122,7 @@ section h2 {
 
 #projeler article h3 {
   color: var(--color-primary);
+  font-size: var(--text-xl);
   margin-bottom: var(--space-sm);
 }
 
@@ -199,33 +200,33 @@ section h2 {
 }
 
 #iletisim button[type="submit"]:hover {
-  background: #1d4ed8;
+  background: var(--color-secondary);
 }
 
 /* ── Footer ── */
 footer {
-  background: #1a1a2e;
+  background: var(--color-surface);
   text-align: center;
-  padding: 1.5rem 2rem;
-  border-top: 2px solid #2563EB;
-  color: #9ca3af;
-  font-size: 0.9rem;
+  padding: var(--space-xl) var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
 }
 
 footer ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0.6rem;
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
 }
 
 footer ul li a {
-  color: #818cf8;
+  color: var(--color-secondary);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 footer ul li a:hover {
-  color: #a5b4fc;
+  color: var(--color-primary);
 }
