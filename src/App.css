@@ -1,98 +1,98 @@
 /* ── Header ── */
 header {
-  background-color: #1a1a2e;
-  padding: 1.5rem 2rem;
+  background-color: var(--color-surface);
+  padding: var(--space-lg) var(--space-xl);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--space-md);
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 2px solid #2563EB;
+  border-bottom: 1px solid var(--color-border);
 }
 
 header h1 {
-  font-size: 1.6rem;
-  color: #a5b4fc;
+  font-size: var(--text-xl);
+  color: var(--color-primary);
 }
 
 /* ── Nav ── */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 nav ul li a {
-  color: #e0e0e0;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 nav ul li a:hover {
-  color: #818cf8;
+  color: var(--color-primary);
 }
 
 /* ── Main ── */
 main {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: var(--space-xl) var(--space-lg);
 }
 
 /* ── Sections ── */
 section {
-  margin-bottom: 3rem;
-  padding-top: 1rem;
+  margin-bottom: var(--space-3xl);
+  padding-top: var(--space-md);
 }
 
 section h2 {
-  font-size: 1.7rem;
-  color: #818cf8;
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.4rem;
+  font-size: var(--text-2xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-xs);
 }
 
 /* ── Hakkimda ── */
 #hakkimda figure {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
   text-align: center;
 }
 
 #hakkimda figure img {
-  border-radius: 50%;
-  border: 3px solid #2563EB;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-primary);
   display: block;
 }
 
 #hakkimda figure figcaption {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-  color: #9ca3af;
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
 }
 
 #hakkimda p {
-  margin-bottom: 1rem;
-  max-width: 650px;
+  margin-bottom: var(--space-md);
+  max-width: 65ch;
 }
 
 #hakkimda h3 {
-  font-size: 1.1rem;
-  color: #c4b5fd;
-  margin-bottom: 0.5rem;
+  font-size: var(--text-lg);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
 }
 
 #hakkimda ul {
   list-style: disc;
-  padding-left: 1.5rem;
+  padding-left: var(--space-xl);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.5rem;
+  gap: var(--space-xs) var(--space-xl);
 }
 
 /* ── Projeler ── */
@@ -107,95 +107,95 @@ section h2 {
 }
 
 #projeler article {
-  background: #1e1e2e;
-  border: 1px solid #2d2d44;
-  border-radius: 8px;
-  padding: 1.2rem;
-  margin-bottom: 1.5rem;
-  transition: box-shadow 0.2s;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
 #projeler article:hover {
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 #projeler article h3 {
-  color: #a5b4fc;
-  margin-bottom: 0.6rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
 }
 
 #projeler article figure {
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--space-md);
 }
 
 #projeler article figure img {
   width: 100%;
   max-width: 400px;
-  border-radius: 4px;
-  border: 1px solid #333;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
 }
 
 #projeler article figure figcaption {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-top: 0.3rem;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
 }
 
 #projeler article p {
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-  color: #c9cad6;
+  margin-bottom: var(--space-md);
+  font-size: var(--text-base);
+  color: var(--color-text);
 }
 
 #projeler article ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: var(--space-sm);
 }
 
 #projeler article ul li {
-  background: #2563EB22;
-  color: #818cf8;
-  border: 1px solid #2563EB55;
-  border-radius: 4px;
-  padding: 0.15rem 0.6rem;
-  font-size: 0.82rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: var(--radius-full);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--text-sm);
 }
 
 /* ── Iletisim Form ── */
 #iletisim fieldset {
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
   max-width: 600px;
 }
 
 #iletisim legend {
-  color: #a5b4fc;
+  color: var(--color-primary);
   font-weight: 600;
-  padding: 0 0.5rem;
+  padding: 0 var(--space-sm);
 }
 
 #iletisim input,
 #iletisim textarea,
 #iletisim select {
-  background: #1a1a2e;
-  color: #e0e0e0;
-  border-color: #444;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
 }
 
 #iletisim button[type="submit"] {
-  background: #2563EB;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-bg);
   border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
-  transition: background 0.2s;
-  margin-top: 0.5rem;
+  transition: background var(--transition-fast);
+  margin-top: var(--space-sm);
 }
 
 #iletisim button[type="submit"]:hover {
