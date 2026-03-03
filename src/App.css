@@ -120,66 +120,51 @@ section h2 {
   gap: var(--space-xl);
 }
 
-#projeler h2 {
-  margin-bottom: 1.2rem;
-}
-
-#projeler article {
+/* ===== PROJE KARTI ===== */
+.project-card {
+  display: flex;
+  flex-direction: column;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  margin-bottom: var(--space-lg);
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-#projeler article:hover {
-  box-shadow: var(--shadow-md);
+.project-card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-#projeler article h3 {
-  color: var(--color-primary);
-  font-size: var(--text-xl);
-  margin-bottom: var(--space-sm);
-}
-
-#projeler article figure {
-  margin-bottom: var(--space-md);
-}
-
-#projeler article figure img {
+/* Kart icindeki gorsel */
+.project-card img {
   width: 100%;
-  max-width: 400px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  height: 200px;
+  object-fit: cover;
 }
 
-#projeler article figure figcaption {
-  font-size: var(--text-sm);
+/* Kart icerigi */
+.project-card h3,
+.project-card p,
+.project-card .skill-tags {
+  padding: 0 var(--space-lg);
+}
+
+.project-card h3 {
+  margin-top: var(--space-md);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+}
+
+.project-card p {
   color: var(--color-muted);
-  margin-top: var(--space-xs);
+  flex-grow: 1;
+  /* icerik farkli uzunlukta olsa bile kartlarin alt kenari hizali */
 }
 
-#projeler article p {
-  margin-bottom: var(--space-md);
-  font-size: var(--text-base);
-  color: var(--color-text);
-}
-
-#projeler article ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-}
-
-#projeler article ul li {
-  background: var(--color-primary);
-  color: var(--color-bg);
-  border-radius: var(--radius-full);
-  padding: var(--space-xs) var(--space-md);
-  font-size: var(--text-sm);
+.project-card .skill-tags {
+  padding-bottom: var(--space-lg);
+  margin-top: auto;
 }
 
 /* ── Iletisim Form ── */

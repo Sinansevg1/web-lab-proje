@@ -54,15 +54,12 @@ function App() {
           <h2>Projelerim</h2>
 
           <div className="project-grid">
-            <article>
+            <article className="project-card">
+              <img
+                src="https://placehold.co/400x225"
+                alt="Kisisel portfolyo sitesinin ana sayfa ekran gorüntüsü"
+              />
               <h3>Kisisel Portfolyo Sitesi</h3>
-              <figure>
-                <img
-                  src="https://placehold.co/400x225"
-                  alt="Kisisel portfolyo sitesinin ana sayfa ekran gorüntüsü"
-                />
-                <figcaption>Portfolyo – Ana Sayfa</figcaption>
-              </figure>
               <p>
                 Semantik HTML5, erişilebilirlik ilkeleri ve temel CSS kullanilarak
                 gelistirilen tek sayfali kisisel tanitim sitesi.
@@ -74,15 +71,12 @@ function App() {
               </ul>
             </article>
 
-            <article>
+            <article className="project-card">
+              <img
+                src="https://placehold.co/400x225"
+                alt="Görev takip uygulamasinin görev listesi ekran gorüntüsü"
+              />
               <h3>Görev Takip Uygulamasi</h3>
-              <figure>
-                <img
-                  src="https://placehold.co/400x225"
-                  alt="Görev takip uygulamasinin görev listesi ekran gorüntüsü"
-                />
-                <figcaption>Görev Takip – Liste Görünümü</figcaption>
-              </figure>
               <p>
                 Kullanicilarin görev ekleyip, tamamlanmis olarak isaretleyebildiği
                 basit bir yapilacaklar listesi uygulamasi.
