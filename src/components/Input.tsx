@@ -28,8 +28,8 @@ export default function Input({
                 type={type}
                 className={`w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-gray-100 
           ${error
-                        ? "border-red-500 focus:ring-red-500"
-                        : "border-gray-300 focus:ring-blue-500"
+                        ? "border-error focus:ring-error"
+                        : "border-gray-300 focus:ring-primary"
                     } 
           ${props.disabled
                         ? "bg-gray-100 cursor-not-allowed"
@@ -41,7 +41,7 @@ export default function Input({
                 {...props}
             />
             {error && (
-                <p id={`${id}-error`} role="alert" className="text-sm text-red-600 dark:text-red-400">
+                <p id={`${id}-error`} role="alert" className="text-sm text-error">
                     {error}
                 </p>
             )}

@@ -19,9 +19,9 @@ export default function Alert({
 }: AlertProps) {
     const variants = {
         info: `bg-blue-50 border-blue-500 text-blue-800 dark:bg-blue-950 dark:text-blue-200`,
-        success: `bg-green-50 border-green-500 text-green-800 dark:bg-green-950 dark:text-green-200`,
+        success: `bg-success/10 border-success text-success dark:text-success/90`,
         warning: `bg-amber-50 border-amber-500 text-amber-800 dark:bg-amber-950 dark:text-amber-200`,
-        error: `bg-red-50 border-red-500 text-red-800 dark:bg-red-950 dark:text-red-200`,
+        error: `bg-error/10 border-error text-error dark:text-error/90`,
     };
 
     return (
