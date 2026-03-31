@@ -75,7 +75,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      // eslint-disable-next-line no-console
       console.log("Form verisi:", formData);
       setSubmitSuccess(true);
       setFormData(initialFormData);
