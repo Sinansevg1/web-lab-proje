@@ -1,52 +1,33 @@
 [
   {
     "id": 1,
-    "title": "E-Ticaret Platformu",
-    "description": "React ve Node.js ile tam kapsamli e-ticaret uygulamasi.",
-    "tech": ["React", "Node.js", "MongoDB"],
-    "year": 2024,
+    "title": "QuickOrder",
+    "description": "ASP.NET Core + SignalR ile gercek zamanli restoran siparis ve yonetim platformu. Masa, sepet, siparis, bildirim ve kasa akislarini uctan uca yonetir.",
+    "tech": [".NET 8", "ASP.NET Core Web API", "SignalR", "EF Core", "SQL Server"],
+    "year": 2026,
     "category": "fullstack",
     "featured": true,
-    "image": "https://placehold.co/600x400?text=E-Ticaret"
+    "image": "https://placehold.co/1200x800/0f172a/ffffff?text=QuickOrder",
+    "demoUrl": "https://restorant.sinansevgi.com.tr/"
   },
   {
     "id": 2,
-    "title": "Blog Uygulamasi",
-    "description": "Next.js ile SEO dostu kisisel blog platformu.",
-    "tech": ["Next.js", "TypeScript", "Tailwind"],
-    "year": 2024,
-    "category": "frontend",
-    "featured": false,
-    "image": "https://placehold.co/600x400?text=Blog"
+    "title": "QuickOrder Admin Mobile",
+    "description": "React Native + TypeScript ile restoran yoneticilerine canli admin paneli. SignalR ile masa/siparis takibi, REST API ile kategori-urun-rezervasyon yonetimi.",
+    "tech": ["React Native", "TypeScript", "SignalR", "Axios", "Android Emulator"],
+    "year": 2026,
+    "category": "fullstack",
+    "featured": true,
+    "image": "https://placehold.co/1200x800/111827/ffffff?text=QuickOrder+Admin+Mobile"
   },
   {
     "id": 3,
-    "title": "Hava Durumu API",
-    "description": "OpenWeather API ile anlik hava durumu sorgulama.",
-    "tech": ["JavaScript", "REST API", "CSS"],
-    "year": 2023,
-    "category": "frontend",
-    "featured": true,
-    "image": "https://placehold.co/600x400?text=Hava+Durumu"
-  },
-  {
-    "id": 4,
-    "title": "Gorev Yoneticisi",
-    "description": "Drag-and-drop destekli Kanban tarzi gorev panosu.",
-    "tech": ["React", "TypeScript", "DnD Kit"],
-    "year": 2024,
-    "category": "frontend",
+    "title": "Stock Automation",
+    "description": "Stok ve urun hareketlerinin yonetildigi otomasyon projesi. Envanter takibi, kayit islemleri ve temel raporlama akislarini kapsar.",
+    "tech": ["C#", ".NET", "SQL Server", "Entity Framework"],
+    "year": 2025,
+    "category": "backend",
     "featured": false,
-    "image": "https://placehold.co/600x400?text=Gorev+Yoneticisi"
-  },
-  {
-    "id": 5,
-    "title": "Chat Uygulamasi",
-    "description": "WebSocket ile gercek zamanli mesajlasma.",
-    "tech": ["React", "Socket.io", "Express"],
-    "year": 2023,
-    "category": "fullstack",
-    "featured": true,
-    "image": "https://placehold.co/600x400?text=Chat"
+    "image": "https://placehold.co/1200x800/334155/ffffff?text=Stock+Automation"
   }
 ]

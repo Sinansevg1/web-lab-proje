@@ -5,6 +5,8 @@ import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
 import ProjectList from "./components/sections/ProjectList";
 import ContactSection from "./components/sections/ContactSection";
+import EducationSection from "./components/sections/EducationSection";
+import CertificatesSection from "./components/sections/CertificatesSection";
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <EducationSection />
+        <CertificatesSection />
         <ProjectList />
         <ContactSection />
       </main>

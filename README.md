@@ -1,28 +1,32 @@
-# Web LAB-1 - Hello Project
+# Sinan Sevgi - Kisisel Portfolyo
 
-## Hakkında
-Bu proje, Web Tasarımı ve Programlama dersi LAB-1 kapsamında Vite + React + TypeScript kullanılarak oluşturulmuştur.
+Bu repo, `Vite + React + TypeScript + Tailwind` ile hazirlanmis kisisel web sitesi ve portfolyo projesidir.
 
-## Geliştirici
-- **Ad Soyad:** Sinan Sevgi
-- **Öğrenci No:** 225541066
+## Icerik
+- Kisisel tanitim ve iletisim bilgileri
+- Teknik yetkinlikler
+- Egitim, dil ve sertifika bolumleri
+- Filtrelenebilir proje listesi
+- Canli demo linkleri
 
-## Kullanılan Teknolojiler
-- React 18
-- TypeScript
-- Vite
-
-## Kurulum
+## Gelistirme
 ```bash
 npm install
-```
-
-## Çalıştırma
-```bash
 npm run dev
 ```
 
-Tarayıcıda http://localhost:5173 adresini aç.
+Tarayici: `http://localhost:5173`
 
-## Ekran Görüntüsü
-(ekran görüntüsünü buraya ekle)
+## Build ve On Izleme
+```bash
+npm run build
+npm run preview
+```
+
+## Canliya Alma Kontrol Listesi
+- Domain adresini `index.html`, `public/robots.txt` ve `public/sitemap.xml` dosyalarinda guncelle
+- Proje kartlarindaki yalnizca `demoUrl` alanlarini `public/data/projects.json` icinde doldur
+- Son kontrol icin `npm run lint` ve `npm run build` calistir
+
+## Mevcut Canli Proje
+- QuickOrder: [https://restorant.sinansevgi.com.tr/](https://restorant.sinansevgi.com.tr/)

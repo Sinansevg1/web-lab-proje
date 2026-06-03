@@ -39,7 +39,9 @@ export default function ProjectList() {
     <section id="projects" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Projelerim</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">Uzerinde calistigim projeler</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">
+          Urettigim projeler, canli demolar ve teknik kapsamlar.
+        </p>
 
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
@@ -85,9 +87,12 @@ export default function ProjectList() {
               key={project.id}
               className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center">
-                <span className="text-4xl opacity-50">&#128187;</span>
-              </div>
+              <img
+                src={project.image}
+                alt={`${project.title} gorseli`}
+                className="h-48 w-full object-cover"
+                loading="lazy"
+              />
 
               <div className="p-4">
                 <div className="flex items-start justify-between mb-2">
@@ -115,6 +120,19 @@ export default function ProjectList() {
                 <p className="text-xs text-gray-400">
                   {project.year} {" \u00B7 "} {project.category}
                 </p>
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                      Projeyi Incele
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}

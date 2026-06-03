@@ -53,7 +53,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitInfo, setSubmitInfo] = useState<string | null>(null);
 
   function handleChange(field: keyof ContactFormData, value: string) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -74,34 +74,43 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form verisi:", formData);
-      setSubmitSuccess(true);
+      const response = await fetch("https://formsubmit.co/ajax/9a.sinansevgi@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: `[Portfolyo] ${formData.subject}`,
+          message: formData.message,
+          _captcha: "false",
+          _template: "table",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Gonderim hatasi");
+      }
+
+      setSubmitInfo("Mesajiniz basariyla iletildi. En kisa surede donus yapacagim.");
       setFormData(initialFormData);
     } catch {
-      alert("Gonderim basarisiz. Tekrar deneyin.");
+      setSubmitInfo("Mesaj gonderilemedi. Lutfen tekrar deneyin veya WhatsApp ile ulasin.");
     } finally {
       setIsSubmitting(false);
     }
   }
 
-  if (submitSuccess) {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <p className="text-green-800 font-medium">Mesajiniz basariyla gonderildi!</p>
-        <button
-          onClick={() => setSubmitSuccess(false)}
-          className="mt-4 text-sm text-green-600 underline"
-          type="button"
-        >
-          Yeni mesaj gonder
-        </button>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-lg" noValidate>
+      {submitInfo && (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+          {submitInfo}
+        </div>
+      )}
+
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-1">
           Ad Soyad
@@ -149,8 +158,8 @@ export default function ContactForm() {
           }`}
         >
           <option value="">Konu seciniz...</option>
-          <option value="genel">Genel</option>
-          <option value="destek">Teknik Destek</option>
+          <option value="is teklifi">Is Teklifi</option>
+          <option value="freelance proje">Freelance Proje</option>
           <option value="oneri">Oneri</option>
           <option value="isbirligi">Is Birligi</option>
         </select>
