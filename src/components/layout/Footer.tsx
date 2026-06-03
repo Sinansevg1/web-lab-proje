@@ -1,22 +1,25 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 py-8 px-4 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-3 items-center justify-between">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Sinan Sevgi - Tum haklari saklidir.
-        </p>
-        <div className="flex gap-4 text-sm">
-          <a href="#hero" className="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-brand)] text-white py-10">
+      <div className="container-main flex flex-col sm:flex-row gap-6 items-center justify-between">
+        <div className="text-center sm:text-left">
+          <p className="font-bold text-lg">Sinan Sevgi</p>
+          <p className="text-sm text-white/70 mt-1">
+            © {new Date().getFullYear()} Tum haklari saklidir.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center text-sm font-medium">
+          <a href="#hero" className="text-white/80 hover:text-white transition-colors">
             Uste don
           </a>
-          <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+          <a href="#projects" className="text-white/80 hover:text-white transition-colors">
             Projeler
           </a>
           <a
             href="https://www.linkedin.com/in/sinan-sevgi-8a26a025b"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600"
+            className="text-white/80 hover:text-white transition-colors"
           >
             LinkedIn
           </a>
@@ -25,4 +28,3 @@ export default function Footer() {
     </footer>
   );
 }
-

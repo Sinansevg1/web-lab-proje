@@ -1,7 +1,10 @@
+import Section from "../ui/Section";
+import SectionTitle from "../ui/SectionTitle";
+
 const education = {
   school: "Firat Universitesi",
   department: "Yazilim Muhendisligi",
-  date: "08/2022 - 07/2027",
+  date: "08/2022 — 07/2027",
   city: "Elazig / Turkiye",
 };
 
@@ -9,36 +12,38 @@ const languages = [{ name: "Ingilizce", level: "B1" }];
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-12 md:py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 dark:text-blue-400 text-center md:text-left mb-2">
-          Egitim ve Diller
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-8 text-center md:text-left text-sm sm:text-base">
-          Akademik altyapim ve aktif kullandigim yabanci dil seviyesi.
-        </p>
+    <Section id="education" alt>
+      <SectionTitle
+        label="03 — Egitim"
+        title="Egitim ve Diller"
+        description="Akademik altyapim ve yabanci dil seviyem."
+        center
+      />
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{education.school}</h3>
-            <p className="text-gray-700 dark:text-gray-200">{education.department}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{education.date}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{education.city}</p>
-          </article>
+      <div className="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
+        <article className="card p-6 sm:p-8">
+          <p className="section-label mb-3">Universite</p>
+          <h3 className="text-xl font-bold text-[var(--color-brand)]">{education.school}</h3>
+          <p className="mt-2 text-[var(--color-ink-muted)]">{education.department}</p>
+          <p className="mt-4 text-sm font-mono text-[var(--color-ink-muted)]">{education.date}</p>
+          <p className="text-sm text-[var(--color-ink-muted)]">{education.city}</p>
+        </article>
 
-          <article className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Diller</h3>
-            <ul className="space-y-2">
-              {languages.map((language) => (
-                <li key={language.name} className="flex items-center justify-between">
-                  <span className="text-gray-700 dark:text-gray-200">{language.name}</span>
-                  <span className="text-sm font-medium text-blue-600 dark:text-blue-300">{language.level}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
+        <article className="card p-6 sm:p-8">
+          <p className="section-label mb-3">Diller</p>
+          <ul className="space-y-4">
+            {languages.map((language) => (
+              <li
+                key={language.name}
+                className="flex items-center justify-between rounded-xl bg-[var(--color-brand-light)] px-4 py-3"
+              >
+                <span className="font-semibold text-[var(--color-brand)]">{language.name}</span>
+                <span className="tag">{language.level}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
-    </section>
+    </Section>
   );
 }

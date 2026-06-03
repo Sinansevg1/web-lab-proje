@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "Hakkimda" },
+  { href: "#skills", label: "Yetenekler" },
   { href: "#projects", label: "Projeler" },
   { href: "#contact", label: "Iletisim" },
 ];
@@ -10,29 +11,28 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4 pl-12 md:pl-14">
-        <a
-          href="#hero"
-          className="absolute left-3 sm:left-4 top-2.5 md:top-3 inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-blue-600 text-white text-[11px] md:text-[13px] font-semibold shadow-sm"
-          aria-label="Ana sayfa"
-        >
-          SS
+    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/85 backdrop-blur-md">
+      <nav className="container-main h-16 md:h-[4.5rem] flex items-center justify-between gap-4">
+        <a href="#hero" className="flex items-center gap-3 shrink-0 group">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-brand)] text-sm font-bold text-white shadow-md shadow-[var(--color-brand)]/25 transition-transform group-hover:scale-105">
+            SS
+          </span>
+          <span className="hidden sm:block">
+            <span className="block text-sm font-bold text-[var(--color-brand)] leading-tight">
+              Sinan Sevgi
+            </span>
+            <span className="block text-[10px] font-mono text-[var(--color-ink-muted)]">
+              sinansevgi.com.tr
+            </span>
+          </span>
         </a>
 
-        <a
-          href="#hero"
-          className="hidden sm:block text-sm md:text-base font-bold text-blue-600 truncate"
-        >
-          Sinan Sevgi
-        </a>
-
-        <ul className="hidden md:flex gap-5 lg:gap-6 ml-auto">
+        <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm lg:text-base text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+                className="rounded-lg px-4 py-2 text-sm font-medium text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-brand-light)] hover:text-[var(--color-brand)]"
               >
                 {link.label}
               </a>
@@ -40,36 +40,44 @@ export default function Header() {
           ))}
         </ul>
 
+        <a href="#contact" className="hidden md:inline-flex btn-primary text-sm py-2.5 px-5">
+          Iletisime Gec
+        </a>
+
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 ml-auto"
+          className="lg:hidden p-2 rounded-lg hover:bg-[var(--color-brand-light)]"
           aria-label="Menu"
           aria-expanded={menuOpen}
           type="button"
         >
-          <span className="block w-6 h-0.5 bg-gray-600 dark:bg-gray-300 mb-1" />
-          <span className="block w-6 h-0.5 bg-gray-600 dark:bg-gray-300 mb-1" />
-          <span className="block w-6 h-0.5 bg-gray-600 dark:bg-gray-300" />
+          <span className="block w-6 h-0.5 bg-[var(--color-brand)] mb-1.5 rounded" />
+          <span className="block w-6 h-0.5 bg-[var(--color-brand)] mb-1.5 rounded" />
+          <span className="block w-6 h-0.5 bg-[var(--color-brand)] rounded" />
         </button>
       </nav>
 
       {menuOpen && (
-        <ul className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 space-y-1">
-          <li className="sm:hidden pb-2 border-b border-gray-100 dark:border-gray-800">
-            <span className="font-bold text-blue-600">Sinan Sevgi</span>
-          </li>
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block py-2.5 text-center text-gray-600 dark:text-gray-300 hover:text-blue-600"
-              >
-                {link.label}
+        <div className="lg:hidden border-t border-[var(--color-border)] bg-white px-4 py-4">
+          <ul className="space-y-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block rounded-lg py-3 text-center text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-brand-light)] hover:text-[var(--color-brand)]"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li className="pt-2">
+              <a href="#contact" onClick={() => setMenuOpen(false)} className="btn-primary w-full">
+                Iletisime Gec
               </a>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
       )}
     </header>
   );

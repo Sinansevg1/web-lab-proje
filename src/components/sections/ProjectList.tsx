@@ -3,6 +3,14 @@ import type { Category, Project, SortField, SortOrder } from "../../types/projec
 import { fetchProjects } from "../../services/projectService";
 import { applyFilters } from "../../utils/projectHelpers";
 import ProjectFilter from "../forms/ProjectFilter";
+import Section from "../ui/Section";
+import SectionTitle from "../ui/SectionTitle";
+
+const categoryLabels: Record<string, string> = {
+  fullstack: "Full Stack",
+  frontend: "Frontend",
+  backend: "Backend",
+};
 
 export default function ProjectList() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -36,111 +44,101 @@ export default function ProjectList() {
   );
 
   return (
-    <section id="projects" className="py-12 md:py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 dark:text-blue-400 text-center md:text-left mb-2">
-          Projelerim
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8 text-center md:text-left text-sm sm:text-base">
-          Urettigim projeler, canli demolar ve teknik kapsamlar.
-        </p>
+    <Section id="projects" alt>
+      <SectionTitle
+        label="05 — Portfolyo"
+        title="Projelerim"
+        description="Canli demolar ve teknik kapsamlar."
+        center
+      />
 
-        {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-            <p className="text-red-800">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="text-sm text-red-600 underline mt-2"
-              type="button"
-            >
-              Tekrar dene
-            </button>
-          </div>
-        )}
+      {error && (
+        <div className="card border-red-200 bg-red-50 p-4 mb-6 max-w-2xl mx-auto">
+          <p className="text-red-800">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="text-sm text-red-600 underline mt-2"
+            type="button"
+          >
+            Tekrar dene
+          </button>
+        </div>
+      )}
 
-        {!loading && !error && (
-          <ProjectFilter
-            search={search}
-            onSearchChange={setSearch}
-            category={category}
-            onCategoryChange={setCategory}
-            sortField={sortField}
-            onSortFieldChange={setSortField}
-            sortOrder={sortOrder}
-            onSortOrderChange={setSortOrder}
-            resultCount={filtered.length}
-            totalCount={projects.length}
-          />
-        )}
+      {!loading && !error && (
+        <ProjectFilter
+          search={search}
+          onSearchChange={setSearch}
+          category={category}
+          onCategoryChange={setCategory}
+          sortField={sortField}
+          onSortFieldChange={setSortField}
+          sortOrder={sortOrder}
+          onSortOrderChange={setSortOrder}
+          resultCount={filtered.length}
+          totalCount={projects.length}
+        />
+      )}
 
-        {loading && (
-          <div className="flex justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
-          </div>
-        )}
+      {loading && (
+        <div className="flex justify-center py-16">
+          <div className="h-10 w-10 animate-spin rounded-full border-2 border-[var(--color-brand)] border-t-transparent" />
+        </div>
+      )}
 
-        {!loading && !error && filtered.length === 0 && (
-          <p className="text-center text-gray-500 py-12">Eslesen proje bulunamadi.</p>
-        )}
+      {!loading && !error && filtered.length === 0 && (
+        <p className="text-center text-[var(--color-ink-muted)] py-16">Eslesen proje bulunamadi.</p>
+      )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-          {filtered.map((project) => (
-            <article
-              key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow"
-            >
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
+        {filtered.map((project) => (
+          <article key={project.id} className="card card-hover overflow-hidden flex flex-col">
+            <div className="relative h-44 sm:h-48 overflow-hidden bg-[var(--color-brand)]">
               <img
                 src={project.image}
                 alt={`${project.title} gorseli`}
-                className="h-48 w-full object-cover"
+                className="h-full w-full object-cover opacity-90"
                 loading="lazy"
               />
+              {project.featured && (
+                <span className="absolute top-3 right-3 rounded-full bg-amber-400 px-2.5 py-0.5 text-xs font-bold text-amber-950">
+                  One Cikan
+                </span>
+              )}
+            </div>
 
-              <div className="p-4">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="font-bold text-gray-900 dark:text-white">{project.title}</h3>
-                  {project.featured && (
-                    <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full">
-                      One Cikan
-                    </span>
-                  )}
-                </div>
+            <div className="p-5 sm:p-6 flex flex-col flex-1">
+              <h3 className="font-bold text-lg text-[var(--color-brand)]">{project.title}</h3>
+              <p className="mt-2 text-sm text-[var(--color-ink-muted)] leading-relaxed flex-1">
+                {project.description}
+              </p>
 
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{project.description}</p>
-
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded-full"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-xs text-gray-400">
-                  {project.year} {" \u00B7 "} {project.category}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-700 transition-colors"
-                    >
-                      Projeyi Incele
-                    </a>
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {project.tech.map((t) => (
+                  <span key={t} className="tag text-[10px] sm:text-xs">
+                    {t}
+                  </span>
+                ))}
               </div>
-            </article>
-          ))}
-        </div>
+
+              <p className="mt-4 text-xs font-mono text-[var(--color-ink-muted)]">
+                {project.year} · {categoryLabels[project.category] ?? project.category}
+              </p>
+
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary mt-4 w-full text-center text-sm py-2.5"
+                >
+                  Projeyi Incele →
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
-

@@ -103,16 +103,25 @@ export default function ContactForm() {
     }
   }
 
+  const fieldError = (field: keyof FormErrors) =>
+    errors[field] ? "border-red-400 focus:border-red-400 focus:ring-red-200" : "";
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg mx-auto lg:mx-0 lg:ml-auto" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       {submitInfo && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+        <div
+          className={`rounded-xl border p-3 text-sm ${
+            submitInfo.includes("basariyla")
+              ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+              : "border-amber-200 bg-amber-50 text-amber-800"
+          }`}
+        >
           {submitInfo}
         </div>
       )}
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1">
+        <label htmlFor="name" className="block text-sm font-semibold text-[var(--color-brand)] mb-1.5">
           Ad Soyad
         </label>
         <input
@@ -120,16 +129,14 @@ export default function ContactForm() {
           type="text"
           value={formData.name}
           onChange={(e) => handleChange("name", e.target.value)}
-          className={`w-full border rounded-lg px-3 py-2 ${
-            errors.name ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`input-field ${fieldError("name")}`}
           placeholder="Adiniz Soyadiniz"
         />
-        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">
+        <label htmlFor="email" className="block text-sm font-semibold text-[var(--color-brand)] mb-1.5">
           E-posta
         </label>
         <input
@@ -137,25 +144,21 @@ export default function ContactForm() {
           type="email"
           value={formData.email}
           onChange={(e) => handleChange("email", e.target.value)}
-          className={`w-full border rounded-lg px-3 py-2 ${
-            errors.email ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`input-field ${fieldError("email")}`}
           placeholder="ornek@mail.com"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium mb-1">
+        <label htmlFor="subject" className="block text-sm font-semibold text-[var(--color-brand)] mb-1.5">
           Konu
         </label>
         <select
           id="subject"
           value={formData.subject}
           onChange={(e) => handleChange("subject", e.target.value)}
-          className={`w-full border rounded-lg px-3 py-2 ${
-            errors.subject ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`input-field ${fieldError("subject")}`}
         >
           <option value="">Konu seciniz...</option>
           <option value="is teklifi">Is Teklifi</option>
@@ -163,11 +166,11 @@ export default function ContactForm() {
           <option value="oneri">Oneri</option>
           <option value="isbirligi">Is Birligi</option>
         </select>
-        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
+        {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject}</p>}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">
+        <label htmlFor="message" className="block text-sm font-semibold text-[var(--color-brand)] mb-1.5">
           Mesaj
         </label>
         <textarea
@@ -175,20 +178,14 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className={`w-full border rounded-lg px-3 py-2 resize-y ${
-            errors.message ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`input-field resize-y min-h-[120px] ${fieldError("message")}`}
           placeholder="Mesajinizi yaziniz..."
         />
-        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? "Gonderiliyor..." : "Gonder"}
+      <button type="submit" disabled={isSubmitting} className="btn-primary w-full disabled:opacity-50">
+        {isSubmitting ? "Gonderiliyor..." : "Mesaj Gonder"}
       </button>
     </form>
   );

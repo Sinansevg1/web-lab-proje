@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1E3A8A;
-  --color-secondary: #2563EB;
-  --color-accent: #7C3AED;
-  --color-surface: #F9FAFB;
-  --color-muted: #6B7280;
-  --color-error: #DC2626;
-  --color-success: #16A34A;
-  --font-family-sans: system-ui, -apple-system, sans-serif;
-  --font-family-mono: 'Fira Code', 'Consolas', monospace;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ink: #0c1929;
+  --color-ink-muted: #5b6b7c;
+  --color-brand: #0b4f8a;
+  --color-brand-light: #e8f2fc;
+  --color-accent: #0ea5c9;
+  --color-accent-soft: #cffafe;
+  --color-surface: #ffffff;
+  --color-page: #f0f4f9;
+  --color-border: #d8e2ec;
+  --color-success: #059669;
 }
 
 @layer base {
@@ -18,14 +21,63 @@
   }
 
   body {
-    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 overflow-x-hidden;
+    font-family: var(--font-sans);
+    @apply bg-[var(--color-page)] text-[var(--color-ink)] overflow-x-hidden antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 201, 0.12), transparent),
+      linear-gradient(rgba(11, 79, 138, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 79, 138, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 48px 48px, 48px 48px;
   }
 
-  /* Focus indicator for accessibility */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-blue-500;
+    @apply outline-2 outline-offset-2 outline-[var(--color-accent)];
   }
 }
 
-/* Custom variant for dark mode toggle via .dark class */
-@custom-variant dark (&:where(.dark, .dark *));
+@layer components {
+  .container-main {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-14 md:py-20;
+  }
+
+  .card {
+    @apply rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:border-[var(--color-accent)]/30 hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-md shadow-[var(--color-brand)]/20 transition-all hover:bg-[#093d6d] hover:shadow-lg active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[var(--color-brand)] px-6 py-3 text-sm font-semibold text-[var(--color-brand)] transition-all hover:bg-[var(--color-brand-light)] active:scale-[0.98];
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-700 transition-all hover:bg-emerald-50 active:scale-[0.98];
+  }
+
+  .tag {
+    @apply inline-block rounded-full bg-[var(--color-brand-light)] px-3 py-1 text-xs font-medium text-[var(--color-brand)];
+  }
+
+  .tag-accent {
+    @apply inline-block rounded-full bg-[var(--color-accent-soft)] px-3 py-1 text-xs font-medium text-cyan-800;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-2.5 text-[var(--color-ink)] transition-colors placeholder:text-[var(--color-ink-muted)] focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    @apply text-xs font-medium uppercase tracking-widest text-[var(--color-accent)];
+  }
+}

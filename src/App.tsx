@@ -10,9 +10,9 @@ import CertificatesSection from "./components/sections/CertificatesSection";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="flex-1">
         <Hero />
         <About />
         <Skills />
