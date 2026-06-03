@@ -104,7 +104,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg mx-auto lg:mx-0 lg:ml-auto" noValidate>
       {submitInfo && (
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
           {submitInfo}

@@ -9,10 +9,12 @@ const languages = [{ name: "Ingilizce", level: "B1" }];
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+    <section id="education" className="py-12 md:py-16 px-4 sm:px-6 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Egitim ve Diller</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 dark:text-blue-400 text-center md:text-left mb-2">
+          Egitim ve Diller
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 mb-8 text-center md:text-left text-sm sm:text-base">
           Akademik altyapim ve aktif kullandigim yabanci dil seviyesi.
         </p>
 
