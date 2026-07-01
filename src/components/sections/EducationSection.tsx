@@ -1,24 +1,16 @@
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
-
-const education = {
-  school: "Firat Universitesi",
-  department: "Yazilim Muhendisligi",
-  date: "08/2022 — 07/2027",
-  city: "Elazig / Turkiye",
-};
-
-const languages = [{ name: "Ingilizce", level: "B1" }];
+import { useContent } from "../../context/useContent";
 
 export default function EducationSection() {
+  const { content } = useContent();
+  if (!content) return null;
+
+  const { education } = content;
+
   return (
     <Section id="education" alt>
-      <SectionTitle
-        label="03 — Egitim"
-        title="Egitim ve Diller"
-        description="Akademik altyapim ve yabanci dil seviyem."
-        center
-      />
+      <SectionTitle label={education.sectionLabel} title={education.title} description={education.description} center />
 
       <div className="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
         <article className="card p-6 sm:p-8">
@@ -32,11 +24,8 @@ export default function EducationSection() {
         <article className="card p-6 sm:p-8">
           <p className="section-label mb-3">Diller</p>
           <ul className="space-y-4">
-            {languages.map((language) => (
-              <li
-                key={language.name}
-                className="flex items-center justify-between rounded-xl bg-[var(--color-brand-light)] px-4 py-3"
-              >
+            {education.languages.map((language) => (
+              <li key={language.name} className="flex items-center justify-between rounded-xl bg-[var(--color-brand-light)] px-4 py-3">
                 <span className="font-semibold text-[var(--color-brand)]">{language.name}</span>
                 <span className="tag">{language.level}</span>
               </li>

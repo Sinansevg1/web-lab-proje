@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
-import type { Category, Project, SortField, SortOrder } from "../../types/project";
-import { fetchProjects } from "../../services/projectService";
+import { useMemo, useState } from "react";
+import type { SortField, SortOrder, Category } from "../../types/project";
 import { applyFilters } from "../../utils/projectHelpers";
 import ProjectFilter from "../forms/ProjectFilter";
 import Section from "../ui/Section";
 import SectionTitle from "../ui/SectionTitle";
+import { useContent } from "../../context/useContent";
 
 const categoryLabels: Record<string, string> = {
   fullstack: "Full Stack",
@@ -13,55 +13,38 @@ const categoryLabels: Record<string, string> = {
 };
 
 export default function ProjectList() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const { content, loading, error } = useContent();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<Category | "all">("all");
   const [sortField, setSortField] = useState<SortField>("year");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function load() {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await fetchProjects();
-        setProjects(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Bilinmeyen hata olustu");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    load();
-  }, []);
+  const projects = useMemo(
+    () => content?.projects.items ?? [],
+    [content?.projects.items],
+  );
 
   const filtered = useMemo(
     () => applyFilters(projects, search, category, sortField, sortOrder),
     [projects, search, category, sortField, sortOrder],
   );
 
+  if (!content) return null;
+
+  const { projects: projectsSection } = content;
+
   return (
     <Section id="projects" alt>
       <SectionTitle
-        label="05 — Portfolyo"
-        title="Projelerim"
-        description="Canli demolar ve teknik kapsamlar."
+        label={projectsSection.sectionLabel}
+        title={projectsSection.title}
+        description={projectsSection.description}
         center
       />
 
       {error && (
-        <div className="card border-red-200 bg-red-50 p-4 mb-6 max-w-2xl mx-auto">
-          <p className="text-red-800">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="text-sm text-red-600 underline mt-2"
-            type="button"
-          >
-            Tekrar dene
-          </button>
+        <div className="card border-red-200 bg-red-50 dark:bg-red-950/30 p-4 mb-6 max-w-2xl mx-auto">
+          <p className="text-red-800 dark:text-red-300">{error}</p>
         </div>
       )}
 
@@ -86,7 +69,7 @@ export default function ProjectList() {
         </div>
       )}
 
-      {!loading && !error && filtered.length === 0 && (
+      {!loading && filtered.length === 0 && (
         <p className="text-center text-[var(--color-ink-muted)] py-16">Eslesen proje bulunamadi.</p>
       )}
 
@@ -109,15 +92,11 @@ export default function ProjectList() {
 
             <div className="p-5 sm:p-6 flex flex-col flex-1">
               <h3 className="font-bold text-lg text-[var(--color-brand)]">{project.title}</h3>
-              <p className="mt-2 text-sm text-[var(--color-ink-muted)] leading-relaxed flex-1">
-                {project.description}
-              </p>
+              <p className="mt-2 text-sm text-[var(--color-ink-muted)] leading-relaxed flex-1">{project.description}</p>
 
               <div className="flex flex-wrap gap-1.5 mt-4">
                 {project.tech.map((t) => (
-                  <span key={t} className="tag text-[10px] sm:text-xs">
-                    {t}
-                  </span>
+                  <span key={t} className="tag text-[10px] sm:text-xs">{t}</span>
                 ))}
               </div>
 
@@ -126,12 +105,7 @@ export default function ProjectList() {
               </p>
 
               {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-primary mt-4 w-full text-center text-sm py-2.5"
-                >
+                <a href={project.demoUrl} target="_blank" rel="noreferrer" className="btn-primary mt-4 w-full text-center text-sm py-2.5">
                   Projeyi Incele →
                 </a>
               )}

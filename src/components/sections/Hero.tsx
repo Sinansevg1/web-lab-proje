@@ -1,4 +1,11 @@
+import { useContent } from "../../context/useContent";
+
 export default function Hero() {
+  const { content } = useContent();
+  if (!content) return null;
+
+  const { profile } = content;
+
   return (
     <section
       id="hero"
@@ -9,25 +16,24 @@ export default function Hero() {
 
       <div className="container-main relative">
         <div className="max-w-3xl mx-auto text-center lg:max-w-4xl">
-          <p className="section-label mb-4">Portfolio · Fullstack Developer</p>
+          <p className="section-label mb-4">{profile.subtitle}</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[var(--color-brand)] tracking-tight leading-[1.1]">
-            Sinan Sevgi
+            {profile.name}
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-[var(--color-ink-muted)] font-medium">
-            Yazilim Muhendisi · .NET &amp; Olceklenebilir Sistemler
+            {profile.title}
           </p>
           <p className="mt-6 text-sm sm:text-base text-[var(--color-ink-muted)] leading-relaxed max-w-2xl mx-auto">
-            ASP.NET Core, SignalR ve temiz mimari ile uretime hazir web uygulamalari gelistiriyorum.
-            Gercek zamanli is akislari ve surdurulebilir backend cozumleri odagimda.
+            {profile.heroDescription}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-2 text-xs sm:text-sm font-mono text-[var(--color-ink-muted)]">
-            <span className="tag">Mersin, TR</span>
-            <a href="mailto:9a.sinansevgi@gmail.com" className="tag hover:bg-[var(--color-accent-soft)]">
-              9a.sinansevgi@gmail.com
+            <span className="tag">{profile.location}</span>
+            <a href={`mailto:${profile.email}`} className="tag hover:bg-[var(--color-accent-soft)]">
+              {profile.email}
             </a>
-            <a href="tel:+905304879347" className="tag hover:bg-[var(--color-accent-soft)]">
-              +90 530 487 93 47
+            <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="tag hover:bg-[var(--color-accent-soft)]">
+              {profile.phone}
             </a>
           </div>
 
@@ -38,31 +44,16 @@ export default function Hero() {
             <a href="#contact" className="btn-outline w-full sm:w-auto">
               Iletisime Gec
             </a>
-            <a
-              href="https://wa.me/905304879347?text=Merhaba%20Sinan%20Bey%2C%20portfolyonuz%20uzerinden%20ulasiyorum."
-              target="_blank"
-              rel="noreferrer"
-              className="btn-whatsapp w-full sm:w-auto"
-            >
+            <a href={profile.whatsapp} target="_blank" rel="noreferrer" className="btn-whatsapp w-full sm:w-auto">
               WhatsApp
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-medium">
-            <a
-              href="https://www.linkedin.com/in/sinan-sevgi-8a26a025b"
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--color-brand)] hover:text-[var(--color-accent)] transition-colors"
-            >
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-[var(--color-brand)] hover:text-[var(--color-accent)] transition-colors">
               LinkedIn →
             </a>
-            <a
-              href="https://restorant.sinansevgi.com.tr/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-[var(--color-brand)] hover:text-[var(--color-accent)] transition-colors"
-            >
+            <a href={profile.quickOrderDemo} target="_blank" rel="noreferrer" className="text-[var(--color-brand)] hover:text-[var(--color-accent)] transition-colors">
               QuickOrder Demo →
             </a>
           </div>

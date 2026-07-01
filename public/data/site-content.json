@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "name": "Sinan Sevgi",
+    "subtitle": "Portfolio · Fullstack Developer",
+    "title": "Yazilim Muhendisi · .NET & Olceklenebilir Sistemler",
+    "heroDescription": "ASP.NET Core, SignalR ve temiz mimari ile uretime hazir web uygulamalari gelistiriyorum. Gercek zamanli is akislari ve surdurulebilir backend cozumleri odagimda.",
+    "location": "Mersin, TR",
+    "email": "9a.sinansevgi@gmail.com",
+    "phone": "+90 530 487 93 47",
+    "photoUrl": "/profile-photo.png",
+    "photoRole": "Fullstack Developer",
+    "linkedin": "https://www.linkedin.com/in/sinan-sevgi-8a26a025b",
+    "whatsapp": "https://wa.me/905304879347?text=Merhaba%20Sinan%20Bey%2C%20portfolyonuz%20uzerinden%20ulasiyorum.",
+    "quickOrderDemo": "https://restorant.sinansevgi.com.tr/"
+  },
+  "header": {
+    "initials": "SS",
+    "domain": "sinansevgi.com.tr",
+    "navLinks": [
+      { "href": "#about", "label": "Hakkimda" },
+      { "href": "#skills", "label": "Yetenekler" },
+      { "href": "#projects", "label": "Projeler" },
+      { "href": "#contact", "label": "Iletisim" }
+    ],
+    "ctaLabel": "Iletisime Gec"
+  },
+  "about": {
+    "sectionLabel": "01 — Tanitim",
+    "title": "Hakkimda",
+    "description": "Olceklenebilir yazilim cozumleri ureten, ogrenmeye acik bir muhendis.",
+    "bio": "Backend ve fullstack gelistirme odaginda, olceklenebilir uygulama tasarimi konusunda deneyim kazanan bir Yazilim Muhendisligi ogrencisiyim. C# ve .NET ile ASP.NET Core Web API, RESTful servisler ve SignalR uzerinde aktif calisiyorum. N-katmanli mimari, SOLID prensipleri, Dependency Injection, Repository Pattern ve Entity Framework ile temiz ve surdurulebilir kod uretmeye odaklaniyorum.",
+    "quickFacts": [
+      { "label": "Rol", "value": "Yazilim Muhendisi" },
+      { "label": "Konum", "value": "Mersin, Turkiye" },
+      { "label": "Odak", "value": "Backend & Fullstack" },
+      { "label": "Stack", "value": ".NET 8 · EF Core · SignalR" }
+    ]
+  },
+  "skills": {
+    "sectionLabel": "02 — Teknik",
+    "title": "Yetenekler",
+    "description": "Aktif kullandigim teknoloji yiginlari ve muhendislik pratikleri.",
+    "groups": [
+      { "title": "Backend", "icon": "⚙", "items": ["C#", ".NET", "ASP.NET Core Web API", "SignalR", "RESTful API"] },
+      { "title": "Mimari", "icon": "◇", "items": ["N-Katmanli Mimari", "SOLID", "Dependency Injection", "Repository Pattern"] },
+      { "title": "Veritabani", "icon": "▣", "items": ["SQL Server", "Entity Framework Core", "EF6", "Code-First", "Migration"] },
+      { "title": "Frontend & Mobil", "icon": "◈", "items": ["ASP.NET MVC", "Razor", "React Native", "TypeScript", "Git"] },
+      { "title": "Veri Bilimi", "icon": "◎", "items": ["Python", "pandas", "NumPy", "scikit-learn", "Random Forest"] }
+    ]
+  },
+  "education": {
+    "sectionLabel": "03 — Egitim",
+    "title": "Egitim ve Diller",
+    "description": "Akademik altyapim ve yabanci dil seviyem.",
+    "school": "Firat Universitesi",
+    "department": "Yazilim Muhendisligi",
+    "date": "08/2022 — 07/2027",
+    "city": "Elazig / Turkiye",
+    "languages": [{ "name": "Ingilizce", "level": "B1" }]
+  },
+  "certificates": {
+    "sectionLabel": "04 — Sertifikalar",
+    "title": "Sertifikalar",
+    "description": "Teknik yetkinligimi destekleyen tamamlanmis programlar.",
+    "items": [
+      {
+        "title": "Bilgi Teknolojilerine Giris",
+        "org": "BTK · 26 Nisan 2024",
+        "detail": "Temel bilgisayar sistemleri, yazilim ve dijital teknoloji konularinda tamamlama sertifikasi."
+      },
+      {
+        "title": "Temelden Ileri Seviyeye Java",
+        "org": "Online Egitim",
+        "detail": "OOP, veri yapilari, istisna yonetimi ve koleksiyonlar ile uygulama gelistirme."
+      },
+      {
+        "title": "A'dan Z'ye C# Programlama",
+        "org": "Uygulamali Egitim",
+        "detail": "Windows Forms, veritabani entegrasyonu ve pratik yazilim gelistirme teknikleri."
+      }
+    ]
+  },
+  "projects": {
+    "sectionLabel": "05 — Portfolyo",
+    "title": "Projelerim",
+    "description": "Canli demolar ve teknik kapsamlar.",
+    "items": [
+      {
+        "id": 1,
+        "title": "QuickOrder",
+        "description": "ASP.NET Core + SignalR ile gercek zamanli restoran siparis ve yonetim platformu. Masa, sepet, siparis, bildirim ve kasa akislarini uctan uca yonetir.",
+        "tech": [".NET 8", "ASP.NET Core Web API", "SignalR", "EF Core", "SQL Server"],
+        "year": 2026,
+        "category": "fullstack",
+        "featured": true,
+        "image": "https://placehold.co/1200x800/0f172a/ffffff?text=QuickOrder",
+        "demoUrl": "https://restorant.sinansevgi.com.tr/"
+      },
+      {
+        "id": 2,
+        "title": "QuickOrder Admin Mobile",
+        "description": "React Native + TypeScript ile restoran yoneticilerine canli admin paneli. SignalR ile masa/siparis takibi, REST API ile kategori-urun-rezervasyon yonetimi.",
+        "tech": ["React Native", "TypeScript", "SignalR", "Axios", "Android Emulator"],
+        "year": 2026,
+        "category": "fullstack",
+        "featured": true,
+        "image": "https://placehold.co/1200x800/111827/ffffff?text=QuickOrder+Admin+Mobile"
+      },
+      {
+        "id": 3,
+        "title": "Stock Automation",
+        "description": "Stok ve urun hareketlerinin yonetildigi otomasyon projesi. Envanter takibi, kayit islemleri ve temel raporlama akislarini kapsar.",
+        "tech": ["C#", ".NET", "SQL Server", "Entity Framework"],
+        "year": 2025,
+        "category": "backend",
+        "featured": false,
+        "image": "https://placehold.co/1200x800/334155/ffffff?text=Stock+Automation"
+      }
+    ]
+  },
+  "contact": {
+    "sectionLabel": "06 — Iletisim",
+    "title": "Bana Ulasin",
+    "description": "Isbirligi, proje teklifi veya teknik sorular icin mesaj birakin.",
+    "formTitle": "Mesaj Gonder",
+    "formSubtitle": "Formu doldurun, en kisa surede donus yapayim.",
+    "formSubmitEmail": "9a.sinansevgi@gmail.com",
+    "items": [
+      { "label": "E-posta", "value": "9a.sinansevgi@gmail.com", "href": "mailto:9a.sinansevgi@gmail.com" },
+      { "label": "Telefon", "value": "+90 530 487 93 47", "href": "tel:+905304879347" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/sinan-sevgi-8a26a025b", "href": "https://www.linkedin.com/in/sinan-sevgi-8a26a025b", "external": true },
+      { "label": "WhatsApp", "value": "WhatsApp'tan Ulasin", "href": "https://wa.me/905304879347?text=Merhaba%20Sinan%20Bey%2C%20portfolyonuz%20uzerinden%20ulasiyorum.", "external": true, "accent": true }
+    ]
+  },
+  "footer": {
+    "name": "Sinan Sevgi",
+    "tagline": "Tum haklari saklidir.",
+    "linkedin": "https://www.linkedin.com/in/sinan-sevgi-8a26a025b"
+  },
+  "seo": {
+    "pageTitle": "Sinan Sevgi | Yazilim Muhendisi Portfolyo",
+    "metaDescription": "Sinan Sevgi - Yazilim Muhendisi portfolyo sitesi. .NET, ASP.NET Core Web API, SignalR ve olceklenebilir backend gelistirme projeleri.",
+    "ogUrl": "https://sinansevgi.com.tr/",
+    "siteName": "Sinan Sevgi"
+  }
+}

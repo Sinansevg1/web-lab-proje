@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { useContent } from "../../context/useContent";
 
 interface ContactFormData {
   name: string;
@@ -50,6 +51,7 @@ function validate(data: ContactFormData): FormErrors {
 }
 
 export default function ContactForm() {
+  const { content } = useContent();
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,8 +75,9 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
+    const email = content?.contact.formSubmitEmail ?? "9a.sinansevgi@gmail.com";
     try {
-      const response = await fetch("https://formsubmit.co/ajax/9a.sinansevgi@gmail.com", {
+      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
